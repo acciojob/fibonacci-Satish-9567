@@ -6,7 +6,16 @@ function fibonacci(num) {
 	if (num==2) {
 		return 1;
 	}
-	return fibonacci(num-2)+fibonacci(num-1);
+	let fibo;
+	let oldno=0;
+	let newno=1;
+	while(num>2){
+		fibo=oldno+newno;
+		oldno=newno;
+		newno=fibo;
+		num--;
+	}
+	return fibo;
 }
 
 module.exports = fibonacci;
